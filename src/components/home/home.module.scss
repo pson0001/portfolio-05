@@ -1,0 +1,188 @@
+// .wrapper {
+//   overflow-x: hidden;
+//   position: relative;
+//   height: 100vh; /* Set height to full viewport height */
+// }
+// .container {
+//   display: flex;
+// }
+
+// .pageContainer {
+//   display: flex;
+//   font-weight: 600;
+//   flex-direction: column;
+//   position: relative;
+//   justify-content: flex-end;
+
+//   height: 100vh;
+//   .topContainer {
+//     display: flex;
+//     align-items: center;
+//     gap: 1rem;
+//     .top {
+//       font-size: 48px;
+//       margin-left: clamp(4px, 0.5vw, 12px);
+//       width: max-content;
+//       white-space: nowrap;
+//     }
+//     .description {
+//       display: flex;
+
+//       flex-direction: column;
+//       gap: 0.2rem;
+//     }
+//   }
+//   .bottom {
+//     display: flex;
+//     gap: 4rem;
+//     font-size: clamp(120px, 10vw, 200px);
+//   }
+// }
+
+// @keyframes fadeIn {
+//   from {
+//     opacity: 0;
+//   }
+//   to {
+//     opacity: 1;
+//   }
+// }
+// .app {
+//   overflow-x: hidden;
+// }
+// .container {
+//   width: 600vw;
+//   height: 100vh;
+//   display: flex;
+//   flex-wrap: wrap;
+// }
+
+// .firstContainer {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   height: 100vh;
+//   background: yellow;
+// }
+
+// .lastContainer {
+//   display: flex;
+//   height: 100vh;
+//   background: yellow;
+// }
+
+// .panel {
+//   width: 100vw;
+//   height: 100vh;
+// }
+
+// .red {
+//   background: red;
+// }
+// .orange {
+//   background: orange;
+// }
+// .purple {
+//   background: purple;
+// }
+// .blue {
+//   background-color: blue;
+// }
+
+.container {
+  width: 600vw;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.lastContainer {
+  display: flex;
+  height: 100vh;
+  background: grey;
+}
+
+.panel {
+  width: 200vw;
+  height: 100vh;
+}
+.contentContainer {
+  display: flex;
+  font-weight: 600;
+  .landing {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
+    gap: 1rem;
+  }
+}
+.topContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  .top {
+    font-size: 48px;
+    margin-left: clamp(4px, 0.5vw, 12px);
+    width: max-content;
+    white-space: nowrap;
+  }
+  .description {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+}
+.cover {
+  overflow: hidden;
+}
+.bottom {
+  display: flex;
+  gap: 4rem;
+  font-size: clamp(120px, 10vw, 200px);
+  line-height: clamp(120px, 10vw, 200px);
+}
+.name {
+  display: flex;
+  gap: 4rem;
+  .sLetter {
+    margin-right: 76px;
+  }
+}
+.face {
+  z-index: 9;
+  position: fixed;
+  left: -200px;
+  // left: -100%;
+  bottom: 30px;
+  // transform: translate(-50%, -50%);
+  rotate: 0;
+  transform: all 0.3s ease;
+  svg {
+    height: clamp(120px, 8vw, 160px);
+  }
+}
+.bottomNav {
+  z-index: 9;
+  position: fixed;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
+  .dot {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 100%;
+  }
+}
+.placeholder {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}

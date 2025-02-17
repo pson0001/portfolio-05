@@ -1,0 +1,66 @@
+@font-face {
+  font-family: "PP Mori";
+  src: url("./assets/font/PP_Mori_Regular.woff") format("woff");
+  font-weight: normal; /* Regular weight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PP Mori";
+  src: url("./assets/font/PP_Mori_SemiBold.woff") format("woff");
+  font-weight: 600; /* SemiBold weight */
+  font-style: normal;
+}
+/* :root {
+  font-family: "PP Mori", sans-serif;
+
+  color: #fff;
+  background-color: #1e1e1e;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  margin: 0;
+
+}
+#root {
+  height: 100%;
+  margin: 0 auto;
+}
+
+ */
+
+:root {
+  font-family: "PP Mori", sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+  color: #fff;
+  background-color: #1e1e1e;
+}
+body {
+  overflow-y: visible;
+  position: relative;
+  overflow-x: hidden;
+}
+html,
+body {
+  margin: 0;
+}
+.char {
+  transform: translateY(200px);
+  transition: transform 0.1s;
+}
+.line {
+  display: flex !important;
+}
