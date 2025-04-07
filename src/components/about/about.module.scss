@@ -1,0 +1,38 @@
+.aboutContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+  background-color: #1e1e1e;
+  padding: 20vh 20vw;
+}
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  & div {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 150%;
+  }
+  .paragraph {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+}
+.detailContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.canvasContainer {
+  position: absolute;
+  height: 100%;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}

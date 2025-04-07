@@ -1,7 +1,37 @@
 .workWrapper {
-  position: relative; /* Allow content to scroll */
-  // height: 200vh; /* Make content tall enough to scroll */
-  width: 300vw;
-}
-.workContainer {
+  color: #1e1e1e;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  height: 100vh;
+  .title {
+    font-weight: 600;
+    font-size: 64px;
+    white-space: nowrap;
+  }
+  .items {
+    display: flex;
+    gap: 80px;
+  }
+  .item {
+    cursor: pointer;
+    height: 60vh;
+    width: 40vh;
+    background-color: white;
+    padding: 24px;
+    padding-right: 0px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .itemTitle {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  .img {
+    height: 100%;
+    background-color: #f2c3d4;
+    border-radius: 12px 0 0 12px;
+  }
 }

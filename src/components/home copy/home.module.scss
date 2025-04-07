@@ -1,0 +1,115 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.lastContainer {
+  display: flex;
+  height: 100vh;
+  background: #ff7ec4;
+}
+
+.panel {
+  width: 200vw;
+  height: 100vh;
+}
+.contentContainer {
+  display: flex;
+  font-weight: 600;
+  z-index: -1;
+  position: relative;
+  .landing {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
+    gap: 1rem;
+  }
+}
+.topContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  .top {
+    font-size: 48px;
+    margin-left: clamp(4px, 0.5vw, 12px);
+    width: max-content;
+    white-space: nowrap;
+  }
+  .description {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+}
+.cover {
+  overflow: hidden;
+}
+.bottom {
+  display: flex;
+  gap: 4rem;
+  font-size: 160px;
+  line-height: 160px;
+  // font-size: clamp(120px, 10vw, 200px);
+  // line-height: clamp(120px, 10vw, 200px);
+}
+.name {
+  display: flex;
+  gap: 2rem; // gap: clamp(40px, 2vw, 80px);
+  .sLetter {
+    // margin-right: clamp(80px, 8vw, 100px);
+    margin-right: 7rem;
+  }
+}
+.face {
+  z-index: 9;
+  position: fixed;
+  left: -200px;
+  // left: -100%;
+  bottom: 30px;
+  // transform: translate(-50%, -50%);
+  rotate: 0;
+  transform: all 0.3s ease;
+  svg {
+    // height: clamp(120px, 8vw, 160px);
+    height: 140px;
+  }
+}
+.bottomNav {
+  z-index: 9;
+  position: fixed;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
+  .dot {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 100%;
+    scale: 0;
+    &.black {
+      background-color: #1e1e1e;
+    }
+    &.white {
+      background-color: #fff;
+    }
+    &.pink {
+      background-color: #f2c3d4;
+    }
+    &.purple {
+      background-color: #bfacf9;
+    }
+  }
+}
+.workContainer {
+  display: flex;
+  align-items: center;
+  background-color: #ff7ec4;
+  margin-left: 80vw;
+}

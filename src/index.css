@@ -57,10 +57,10 @@ html,
 body {
   margin: 0;
 }
-.char {
-  transform: translateY(200px);
-  transition: transform 0.1s;
-}
-.line {
-  display: flex !important;
+
+.word {
+  padding-top: 20px;
+  overflow: hidden;
+  /* border: 1px solid white; */
+  height: 2;
 }

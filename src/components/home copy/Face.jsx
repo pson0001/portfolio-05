@@ -1,27 +1,7 @@
-import { useEffect, useRef } from "react";
 import c from "./home.module.scss";
-const Face = ({ faceRef, position }) => {
-  const prevPositionRef = useRef(position);
-
-  useEffect(() => {
-    // Check if the position has changed
-    if (
-      prevPositionRef.current[0] !== position[0] ||
-      prevPositionRef.current[1] !== position[1]
-    ) {
-      prevPositionRef.current = position; // Update the ref
-    }
-  }, [position]);
-  console.log(position);
+const Face = ({ faceRef }) => {
   return (
-    <div
-      ref={faceRef}
-      className={c.face}
-      style={{
-        top: position[1], // Adjust the vertical position
-        left: position[0],
-      }} // Set the horizontal position
-    >
+    <div ref={faceRef} className={c.face}>
       <svg
         width="148"
         height="148"

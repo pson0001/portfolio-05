@@ -1,17 +1,34 @@
 import c from "./work.module.scss";
-const Work = ({ workRef }) => {
+const Work = () => {
+  const projects = [
+    {
+      name: "Student Portal",
+      description: "Enable students to do their best",
+    },
+    {
+      name: "Course Mapper",
+      description: "Enable students to do their best",
+    },
+    {
+      name: "Monash React Component library",
+      description: "Enable students to do their best",
+    },
+    {
+      name: "Peerview",
+      description: "Enable students to do their best",
+    },
+  ];
   return (
-    <div ref={workRef} className={c.workWrapper}>
-      <div className={c.workContainer}>
-        <div className={c.work}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </div>
+    <div className={c.workWrapper}>
+      <div className={c.title}>Selected projects</div>
+      <div className={c.items}>
+        {projects.map((p, index) => (
+          <div className={c.item} key={index}>
+            <div className={c.img}></div>
+            <div className={c.itemTitle}>{p.name}</div>
+            <div>{p.description}</div>
+          </div>
+        ))}
       </div>
     </div>
   );
