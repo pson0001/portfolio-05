@@ -2,7 +2,14 @@
   height: 100vh;
   width: 100vw;
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: end;
+  background-color: #1e1e1e;
+}
+.top {
+  margin-left: 0.6rem;
+  font-size: 2rem;
+  margin-bottom: -1rem;
 }
 .bottom {
   position: relative;
@@ -29,13 +36,15 @@
   background-color: #1e1e1e;
 }
 .aboutContainer {
-  height: 100vh;
-  width: 100vw;
-  background-color: pink;
+  z-index: 9;
+  background-color: #1e1e1e;
 }
 .panelContainer {
   display: flex;
   width: fit-content;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
 }
 .facePlaceholder {
   width: 160px;
@@ -45,7 +54,7 @@
   display: flex !important;
 }
 .face {
-  z-index: 9;
+  // z-index: 9;
   position: fixed;
   left: -200px;
   bottom: 10px;
@@ -58,6 +67,14 @@
 .workContainer {
   display: flex;
   align-items: center;
-  background-color: #ff7ec4;
-  margin-left: 10vw;
+
+  margin-left: 5vw;
+  z-index: 99;
 }
+// .pageChanger{
+//   z-index: 8;
+//   position: fixed;
+//   height: 100vh;
+//   width: 100vw;
+//   background-color: ;
+// }

@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import c from "./about.module.scss";
 import FallingBalls from "../falling-balls/FallingBalls";
+import boulder from "../assets/about/boulder.jpg";
 gsap.registerPlugin(ScrollTrigger);
 
 const About = ({}) => {
@@ -58,26 +59,22 @@ const About = ({}) => {
     {
       title: "Try the problem",
       paragraph:
-        "Just as I attempt challenging routes on the wall, I approach UX problems with persistence, analysing user pain points from different angles until I discover the right path forward.",
+        "Like tackling tough bouldering routes, I approach UX challenges with persistence, analysing issues from multiple angles until I find the right solution.",
     },
     {
       title: "Iterate the method",
       paragraph:
-        "In bouldering, adjusting your technique is key to success. Similarly, in development, I continuously refine my approach, incorporating user feedback and testing various solutions until the experience feels seamless.",
+        "Success in bouldering, design and development both require constant refinement. I iterate on my work, using feedback and testing to create seamless experiences.",
     },
-    {
-      title: "When to let it go",
-      paragraph:
-        "Sometimes, the most creative solutions emerge when you step back from a problem. I've learned that knowing when to take a break from a challenging design puzzle, like a difficult boulder problem, often leads to breakthrough insights upon return.",
-    },
+
     {
       title: "Solving problems together",
       paragraph:
-        "During bouldering sessions, I often find myself drawn to groups puzzling over difficult routes. I naturally join these conversations, offering my perspective on approach and technique. Through this collaborative exchange of ideas, we eventually find a solution that works for everyone. This mirrors my professional style—I thrive in team environments where diverse viewpoints converge to create the best possible outcome.",
+        "I thrive in collaborative environments, just as I do when sharing strategies with fellow climbers. Diverse perspectives lead to the best solutions.",
     },
   ];
   return (
-    <div className={c.aboutContainer}>
+    <div className={c.introWrapper}>
       <div className={c.intro}>
         <div>Hi, I am Ping.</div>
         <div>
@@ -85,20 +82,25 @@ const About = ({}) => {
             <div key={index}>{text}</div>
           ))}
         </div>
-        <div>
-          Here's how I have approached design, programming and life — in the
-          form of bouldering metaphors.
+      </div>
+      <div>
+        Here's how I have approached design, programming and life — in the form
+        of bouldering metaphors.
+      </div>
+      <div className={c.content}>
+        <div className={c.imageContainer}>
+          <img src={boulder} alt="" />
         </div>
         <div className={c.detailContainer}>
           {contentDetails.map((item) => (
-            <div>
+            <div key={item.title}>
               <div>{item.title}</div>
               <div className={c.paragraph}>{item.paragraph}</div>
             </div>
           ))}
-        </div>
+        </div>{" "}
       </div>
-      <div className={c.canvasContainer}>
+      {/* <div className={c.canvasContainer}>
         <FallingBalls
           text={`React Bits is a library of animated and interactive React components designed to streamline UI development and simplify your workflow.`}
           highlightWords={[
@@ -116,7 +118,7 @@ const About = ({}) => {
           fontSize="2rem"
           mouseConstraintStiffness={0.9}
         />
-      </div>
+      </div> */}
     </div>
   );
 };

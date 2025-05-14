@@ -4,8 +4,9 @@
   align-items: center;
   gap: 80px;
   height: 100vh;
+  background-color: #ff7ec4;
   .title {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 64px;
     white-space: nowrap;
   }
@@ -23,15 +24,38 @@
     border-radius: 24px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
+    color: #1e1e1e;
+    text-decoration: none;
+    &.noAccess {
+      cursor: not-allowed;
+    }
   }
   .itemTitle {
     font-size: 24px;
     font-weight: 600;
+    padding-right: 24px;
+  }
+  .itemDescription {
+    line-height: 150%;
+    padding-right: 24px;
   }
   .img {
     height: 100%;
-    background-color: #f2c3d4;
-    border-radius: 12px 0 0 12px;
+    display: flex;
+    align-items: center;
+    img {
+      width: 100%;
+      height: 60%;
+      object-fit: cover;
+      border-radius: 8px 0 0 8px;
+      object-position: left;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+    &.noShadow {
+      img {
+        box-shadow: none;
+      }
+    }
   }
 }

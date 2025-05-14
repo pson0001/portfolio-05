@@ -46,7 +46,8 @@ html {
   -webkit-overflow-scrolling: touch;
   overflow-scrolling: touch;
   color: #fff;
-  background-color: #1e1e1e;
+  /* background-color: #1e1e1e; */
+  background-color: #ff7ec4;
 }
 body {
   overflow-y: visible;

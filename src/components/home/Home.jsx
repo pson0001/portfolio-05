@@ -1,6 +1,6 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef, useLayoutEffect, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import c from "./home.module.scss";
 import Face from "./Face";
 import SplitType from "split-type";
@@ -8,10 +8,12 @@ import Work from "../work/Work";
 import About from "../about/About";
 const Home = () => {
   gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.refresh(true);
   const component = useRef();
   const sliderRef = useRef();
   const panelRef = useRef();
   const nameRef = useRef();
+  const titleRef = useRef();
   const aboutRef = useRef();
   const faceRef = useRef();
   const letterRef = useRef();
@@ -19,15 +21,24 @@ const Home = () => {
 
   // Intro text animation
   useEffect(() => {
-    if (nameRef.current) {
+    if (nameRef.current && titleRef.current) {
       const splitTextDisplay = new SplitType(nameRef.current, {
         types: "words, chars",
       });
-
+      const splitTopDisplay = new SplitType(titleRef.current, {
+        types: "words, chars",
+      });
+      console.log(splitTopDisplay);
       let ctx = gsap.context(() => {
         gsap.from(splitTextDisplay.chars, {
           yPercent: 130,
           stagger: 0.02,
+          delay: 2,
+          duration: 0.3,
+          ease: "back.out(1.7)",
+        });
+        gsap.from(splitTopDisplay.chars, {
+          yPercent: 130,
           delay: 2,
           duration: 0.3,
           ease: "back.out(1.7)",
@@ -39,6 +50,8 @@ const Home = () => {
 
   // For horizontal scroll
   useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to top-left on mount
+
     let ctx = gsap.context(() => {
       gsap.to(panelRef.current, {
         xPercent: -80,
@@ -111,50 +124,22 @@ const Home = () => {
     if (updatedX) {
       let ctx = gsap.context(() => {
         const faceTl = gsap.timeline();
-
         faceTl.to(faceRef.current, {
           scale: 100,
-          opacity: 1,
+          // opacity: 1,
           rotation: 720,
-          zIndex: 1,
+          // zIndex: 1,
           scrollTrigger: {
             trigger: faceRef.current,
             start: `left ${faceRef.current.getBoundingClientRect().top}px`,
             scrub: 1,
             ease: "none",
-            end: () => "+=" + "200px",
-            markers: true,
-            onEnterBack: () => {
-              gsap.to(faceRef.current, {
-                opacity: 1,
-                duration: 0,
-                zIndex: 1,
-                delay: 0,
-              });
-              gsap.to(sliderRef.current, {
-                backgroundColor: "#1e1e1e",
-                duration: 0,
-              });
-              gsap.to(nameRef.current, {
-                opacity: 1,
-                duration: 0,
-              });
-            },
+            end: () => "+=" + "100px",
           },
           onComplete: () => {
             gsap.to(faceRef.current, {
-              opacity: 0,
-              duration: 0,
-              zIndex: -1,
+              duration: 0.1,
               delay: 0,
-            });
-            gsap.to(sliderRef.current, {
-              backgroundColor: "#FF7EC4",
-              duration: 0,
-            });
-            gsap.to(nameRef.current, {
-              opacity: 0,
-              duration: 0,
             });
           },
         });
@@ -168,11 +153,13 @@ const Home = () => {
 
   return (
     <>
-      <Face faceRef={faceRef} />
       <div ref={component}>
         <div ref={sliderRef}>
           <div ref={panelRef} className={c.panelContainer}>
             <div className={c.introContainer}>
+              <div className={c.top} ref={titleRef}>
+                <div className={c.cover}>Hi, I'm a designer and developer.</div>
+              </div>
               <div className={c.bottom}>
                 <div className={c.name} ref={nameRef}>
                   <div>PING</div>
@@ -194,12 +181,15 @@ const Home = () => {
                 </div>
               </div>
             </div>
+            <Face faceRef={faceRef} />
             <div className={c.workContainer}>
               <Work />
             </div>
           </div>
+          <div ref={aboutRef} className={c.aboutContainer}>
+            <About />
+          </div>
         </div>
-        <div ref={aboutRef} className={c.aboutContainer}></div>
       </div>
     </>
   );
