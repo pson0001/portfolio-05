@@ -16,7 +16,12 @@
     font-weight: 400;
   }
 }
-.intro {
+@media screen and (max-width: 1000px) {
+  .introWrapper {
+    padding: 0 6vw 6vh;
+    padding-top: 6rem;
+    gap: 3rem;
+  }
 }
 
 .content {
@@ -24,6 +29,16 @@
   flex-direction: row;
   gap: 3rem;
   align-items: center;
+}
+@media screen and (max-width: 600px) {
+  .introWrapper {
+    padding: 0 40px 40px;
+    padding-top: 6rem;
+    gap: 20px;
+  }
+  .content {
+    flex-direction: column;
+  }
 }
 .imageContainer {
   img {
@@ -39,7 +54,6 @@
 }
 
 .contact {
-  margin: 0 20px;
   max-width: 600px;
   display: flex;
   position: relative;
