@@ -98,7 +98,28 @@ const About = ({}) => {
               <div className={c.paragraph}>{item.paragraph}</div>
             </div>
           ))}
-        </div>{" "}
+        </div>
+      </div>
+      <div className={c.contact}>
+        <div className={c.title}>
+          <span>
+            If you are interested to chat, feel free to reach out on{" "}
+            <a
+              href="https://www.linkedin.com/in/ping-song-pson0001/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Linkedin
+            </a>
+            <span>.</span>
+          </span>
+        </div>
+        <div className={c.title}>
+          <span>Thank you for stopping by!</span>
+          <span className={c.note}>
+            © 2025 Design and developed by Ping Song
+          </span>
+        </div>
       </div>
       {/* <div className={c.canvasContainer}>
         <FallingBalls

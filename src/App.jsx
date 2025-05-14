@@ -11,7 +11,6 @@ function App() {
   return (
     <div className={c.container}>
       <Nav />
-
       <Routes>
         <Route index element={<Home />} />
         <Route path="student-portal" element={<StudentPortal />} />

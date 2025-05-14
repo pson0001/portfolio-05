@@ -50,9 +50,7 @@ html {
   background-color: #ff7ec4;
 }
 body {
-  overflow-y: visible;
   position: relative;
-  overflow-x: hidden;
 }
 html,
 body {
