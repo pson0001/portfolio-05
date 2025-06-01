@@ -1,16 +1,20 @@
 {
   "name": "portfolio-2025",
-  "private": true,
+  "homepage": "https://pson0001.github.io/portfolio-05",
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "vite build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "framer-motion": "^12.9.2",
+    "gh-pages": "^6.3.0",
     "gsap": "^3.12.7",
     "matter-js": "^0.20.0",
     "node-sass": "^9.0.0",
