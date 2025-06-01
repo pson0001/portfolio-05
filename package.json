@@ -1,7 +1,7 @@
 {
   "name": "portfolio-2025",
-  "homepage": "https://pson0001.github.io/portfolio-05",
-  "private": false,
+  "homepage": "https://www.pings.page",
+  "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
