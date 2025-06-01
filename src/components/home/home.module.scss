@@ -10,6 +10,9 @@
   margin-left: 0.6rem;
   font-size: 2rem;
   margin-bottom: -1rem;
+  @media screen and (max-width: 600px) {
+    font-size: 1.2rem;
+  }
 }
 .bottom {
   position: relative;
@@ -23,6 +26,14 @@
   flex-wrap: wrap;
   & > div {
     height: 160px;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 100px;
+    line-height: 100px;
+    & > div {
+      height: 100px;
+    }
   }
 }
 .hidden {
@@ -45,6 +56,11 @@
   position: relative;
   height: 100vh;
   overflow: hidden;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    height: auto;
+  }
 }
 .facePlaceholder {
   width: 160px;
@@ -54,7 +70,6 @@
   display: flex !important;
 }
 .face {
-  // z-index: 9;
   position: fixed;
   left: -200px;
   bottom: 10px;
@@ -67,14 +82,10 @@
 .workContainer {
   display: flex;
   align-items: center;
-
   margin-left: 5vw;
   z-index: 99;
+
+  @media screen and (max-width: 600px) {
+    margin-left: 0;
+  }
 }
-// .pageChanger{
-//   z-index: 8;
-//   position: fixed;
-//   height: 100vh;
-//   width: 100vw;
-//   background-color: ;
-// }

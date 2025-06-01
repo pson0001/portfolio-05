@@ -11,27 +11,6 @@
   font-weight: 600; /* SemiBold weight */
   font-style: normal;
 }
-/* :root {
-  font-family: "PP Mori", sans-serif;
-
-  color: #fff;
-  background-color: #1e1e1e;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-body {
-  margin: 0;
-
-}
-#root {
-  height: 100%;
-  margin: 0 auto;
-}
-
- */
 
 :root {
   font-family: "PP Mori", sans-serif;
@@ -48,6 +27,11 @@ html {
   color: #fff;
   /* background-color: #1e1e1e; */
   background-color: #ff7ec4;
+
+  @media screen and (max-width: 600px) {
+    width: 100vw;
+    overflow-x: hidden;
+  }
 }
 body {
   position: relative;

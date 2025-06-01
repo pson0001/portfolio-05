@@ -53,18 +53,26 @@ const Home = () => {
     window.scrollTo(0, 0); // Scroll to top-left on mount
 
     let ctx = gsap.context(() => {
-      gsap.to(panelRef.current, {
-        xPercent: -80,
-        ease: "none",
-        scrollTrigger: {
-          trigger: sliderRef.current,
-          pin: true,
-          scrub: 1,
-          end: () => "+=" + panelRef.current.offsetWidth,
-          // markers: true,
+      let mm = gsap.matchMedia();
+
+      mm.add(
+        "(min-width: 600px)",
+        () => {
+          gsap.to(panelRef.current, {
+            xPercent: -80,
+            ease: "none",
+            scrollTrigger: {
+              trigger: sliderRef.current,
+              pin: true,
+              scrub: 1,
+              end: () => "+=" + panelRef.current.offsetWidth,
+              // markers: true,
+            },
+          });
         },
-      });
-    }, component.current);
+        component.current
+      );
+    });
 
     return () => {
       ctx.revert();
@@ -77,19 +85,27 @@ const Home = () => {
       if (letterRef.current) {
         // Get bounding rect
         const rect = letterRef.current.getBoundingClientRect();
-        // setUpdatedX(rect.left);
-        gsap.to(faceRef.current, {
-          duration: 2,
-          left: rect.left + 10,
-          top: rect.top - 10,
-          rotation: 360,
-          ease: "power4.out",
-          delay: 0.5,
-          onComplete: () => {
-            const rect = faceRef.current.getBoundingClientRect();
-            setUpdatedX(rect.left);
-          },
-        });
+
+        let mm = gsap.matchMedia();
+
+        mm.add(
+          { isMobile: "(max-width: 600px)", isDesktop: "(min-width: 601px)" },
+          (context) => {
+            let { isMobile, isDesktop } = context.conditions;
+            gsap.to(faceRef.current, {
+              duration: 2,
+              left: rect.left + 10,
+              top: isMobile ? rect.top - 30 : rect.top - 10,
+              rotation: 360,
+              ease: "power4.out",
+              delay: 0.5,
+              onComplete: () => {
+                const rect = faceRef.current.getBoundingClientRect();
+                setUpdatedX(rect.left);
+              },
+            });
+          }
+        );
       }
     };
 
@@ -123,25 +139,27 @@ const Home = () => {
   useEffect(() => {
     if (updatedX) {
       let ctx = gsap.context(() => {
-        const faceTl = gsap.timeline();
-        faceTl.to(faceRef.current, {
-          scale: 100,
-          // opacity: 1,
-          rotation: 720,
-          // zIndex: 1,
-          scrollTrigger: {
-            trigger: faceRef.current,
-            start: `left ${faceRef.current.getBoundingClientRect().top}px`,
-            scrub: 1,
-            ease: "none",
-            end: () => "+=" + "100px",
-          },
-          onComplete: () => {
-            gsap.to(faceRef.current, {
-              duration: 0.1,
-              delay: 0,
-            });
-          },
+        let mm = gsap.matchMedia();
+
+        mm.add("(min-width: 600px)", () => {
+          const faceTl = gsap.timeline();
+          faceTl.to(faceRef.current, {
+            scale: 100,
+            rotation: 720,
+            scrollTrigger: {
+              trigger: faceRef.current,
+              start: `left ${faceRef.current.getBoundingClientRect().top}px`,
+              scrub: 1,
+              ease: "none",
+              end: () => "+=" + "100px",
+            },
+            onComplete: () => {
+              gsap.to(faceRef.current, {
+                duration: 0.1,
+                delay: 0,
+              });
+            },
+          });
         });
       });
 
