@@ -24,7 +24,7 @@ const Work = () => {
     },
     {
       name: "Course Mapper",
-      path: "student-portal",
+      path: "course-mapper",
       description:
         "Generating over 60,000 personalized digital course plans for students",
       img: mapper,

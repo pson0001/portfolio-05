@@ -63,9 +63,9 @@ const CourseMapper = () => {
                 academic journey.
               </span>
             </div>
-          </div>
-          <div className={c.projectImg}>
-            <img src={mapper} alt="mapper" />
+            <div className={c.projectImg}>
+              <img src={mapper} alt="mapper" />
+            </div>
           </div>
 
           <div className={c.projectContent}>
